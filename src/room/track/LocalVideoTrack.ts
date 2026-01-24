@@ -37,6 +37,9 @@ export class SimulcastTrackInfo {
 const refreshSubscribedCodecAfterNewCodec = 5000;
 
 export default class LocalVideoTrack extends LocalTrack<Track.Kind.Video> {
+  /** @internal */
+  stopOnMute: boolean = false;
+
   /* @internal */
   signalClient?: SignalClient;
 
@@ -146,7 +149,7 @@ export default class LocalVideoTrack extends LocalTrack<Track.Kind.Video> {
         return this;
       }
 
-      if (this.source === Track.Source.Camera && !this.isUserProvided) {
+      if (this.source === Track.Source.Camera && this.stopOnMute && !this.isUserProvided) {
         this.log.debug('stopping camera track', this.logContext);
         // also stop the track, so that camera indicator is turned off
         this._mediaStreamTrack.stop();
@@ -166,7 +169,13 @@ export default class LocalVideoTrack extends LocalTrack<Track.Kind.Video> {
         return this;
       }
 
-      if (this.source === Track.Source.Camera && !this.isUserProvided) {
+      if (
+        this.source === Track.Source.Camera &&
+        (this.stopOnMute ||
+          this._mediaStreamTrack.readyState === 'ended' ||
+          this.pendingDeviceChange) &&
+        !this.isUserProvided
+      ) {
         this.log.debug('reacquiring camera track', this.logContext);
         await this.restartTrack(undefined, true);
       }

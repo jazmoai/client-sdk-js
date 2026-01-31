@@ -29,9 +29,6 @@ importers:
       sdp-transform:
         specifier: ^2.15.0
         version: 2.15.0
-      ts-debounce:
-        specifier: ^4.0.0
-        version: 4.0.0
       tslib:
         specifier: 2.8.1
         version: 2.8.1
@@ -3585,9 +3582,6 @@ packages:
     peerDependencies:
       typescript: '>=4.8.4'
 
-  ts-debounce@4.0.0:
-    resolution: {integrity: sha512-+1iDGY6NmOGidq7i7xZGA4cm8DAa6fqdYcvO5Z6yBevH++Bdo9Qt/mN0TzHUgcCcKv1gmh9+W5dHqz8pMWbCbg==}
-
   ts-declaration-location@1.0.7:
     resolution: {integrity: sha512-EDyGAwH1gO0Ausm9gV6T2nUvBgXT5kGoCMJPllOaooZ+4VvJiKBdZE7wK18N1deEowhcUptS+5GXZK8U/fvpwA==}
     peerDependencies:
@@ -3651,8 +3645,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@6.0.0-dev.20251130:
-    resolution: {integrity: sha512-KsAcpCYlgZmHwL8h3eqhbFbYidBQR8MeRhfP9yQvhUG4gLb8U1jYjL02dqn2jKp88+pxqpZa5qXggULszSam6g==}
+  typescript@6.0.0-dev.20260131:
+    resolution: {integrity: sha512-/++NcAwkaAQQhHywdDCtTk421DIg3xSF9/FiA1yBNQVr3J7SDu20aoH9gzPoPcSX7nqdcULAk9KJdeiXeMAM0A==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -6055,7 +6049,7 @@ snapshots:
     dependencies:
       semver: 7.6.0
       shelljs: 0.8.5
-      typescript: 6.0.0-dev.20251130
+      typescript: 6.0.0-dev.20260131
 
   dunder-proto@1.0.1:
     dependencies:
@@ -7750,8 +7744,6 @@ snapshots:
     dependencies:
       typescript: 5.8.3
 
-  ts-debounce@4.0.0: {}
-
   ts-declaration-location@1.0.7(typescript@5.8.3):
     dependencies:
       picomatch: 4.0.3
@@ -7841,7 +7833,7 @@ snapshots:
 
   typescript@5.8.3: {}
 
-  typescript@6.0.0-dev.20251130: {}
+  typescript@6.0.0-dev.20260131: {}
 
   uc.micro@2.1.0: {}
 
